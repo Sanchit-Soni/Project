@@ -74,14 +74,14 @@ function Home() {
   }, [user, username]);
 
 
-  const Routing = () => {
-    return (
-      <Switch>
-      <Route path= "/Chatbox" component={Chatbox}/>
-    </Switch>
-    )
+//   const Routing = () => {
+//     return (
+//       <Switch>
+//       <Route path= "/Chatbox" component={Chatbox}/>
+//     </Switch>
+//     )
      
-  }
+//   }
 
 
 
@@ -137,12 +137,9 @@ function Home() {
 
   return (
     <Router>
-       <Routing />
+//        <Routing />
     <div className="app">
-     
-     
-     
-
+    <Route path="/" exact>
       <Modal
       
         open={open}
@@ -225,7 +222,8 @@ function Home() {
         {user ? (
         <div>
           <Link to="/Chatbox">
-          <button>Chatbox</button></Link>
+          <button>Chatbox</button>
+          </Link>
           <Button onClick={() => auth.signOut()}>Logout</Button>
         </div>
         ):  
@@ -259,6 +257,8 @@ function Home() {
       )}
       
     </div>
+      </Route>
+      <Route path="/Chatbox" component={Chatbox} />
     </Router>
   );
 }
