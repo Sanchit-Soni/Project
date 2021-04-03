@@ -138,11 +138,7 @@ function App() {
   }
 
   return (
-    <Router>
-      
       <Home />
-    </Router>
-    
     // <Router>
     //    <Routing />
     // <div className="app">
